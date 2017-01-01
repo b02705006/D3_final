@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<style type="text/css">
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="updateHospital()">觀看醫院資料</button>
+<button onclick="updateKindergarden()">觀看幼稚園資料</button>
+
+<script type="text/javascript" charset="UTF-8">
+	// Set the dimensions and margins of the graph
+	var margin = {top: 20, right: 20, bottom: 50, left: 60},
+	    w = 800 - margin.left - margin.right,
+	    h = 600 - margin.top - margin.bottom;
+
+    // Create scales
+	var xScale = d3.scaleBand()
+	    .rangeRound([0, w])
+	    .padding(0.1);
+	
+	var yScale = d3.scaleLinear()
+        .range([h, 0]);
+
+	// Append svg
+	var svg = d3.select("body").append("svg")
+	    .attr("width", w + margin.left + margin.right)
+	    .attr("height", h + margin.top + margin.bottom)
+	  	.append("g")
+	    .attr("transform", 
+	          "translate(" + margin.left + "," + margin.top + ")");
+
+	var city_data;
+
+	// Load the data
+	d3.csv("/home/willy/D3_final/city_full_data.csv", function(data) {
+		data.forEach(function(d) {
+			//d.hos_count_city = +d.hos_count_city;
+			d.k_count_city = +d.k_count_city;
+		})
+
+		city_data = data;
+
+		// Scale the range of the data in the domains
+		xScale.domain(city_data.map(function(d) { return d.city; }));
+		var maxY = d3.max(city_data, function(d) { return d.k_count_city; });
+		yScale.domain([0, maxY]);
+		
+		// Append the rectangles for the bar chart
+	    svg.selectAll(".bar")
+	       .data(city_data)
+	       .enter()
+	       .append("rect")
+	       .attr("class", "bar")
+	       .attr("x", function(d) { return xScale(d.city); })
+	       .attr("width", xScale.bandwidth())
+	       .attr("y", function(d) { return yScale(d.k_count_city); })
+	       .attr("height", function(d) { return h - yScale(d.k_count_city); })
+	       .attr("fill", "rgb(70, 130, 180)")
+	       .on("mouseover", function(d) {
+
+	       		// Change color according to original color
+	       		if(d3.select(this).attr("fill") == "rgb(70, 130, 180)"){
+	       			d3.select(this)
+					.attr("fill", "rgb(0, 0, 255)");
+	       		}
+	       		else if(d3.select(this).attr("fill") == "rgb(186, 85, 211)"){
+	       			d3.select(this)
+					.attr("fill", "rgb(153, 50, 204)");
+	       		}
+
+	       		//Get this bar's x/y values, then augment for the tooltip
+				var xPos = parseFloat(d3.select(this).attr("x")) + xScale.bandwidth() / 2;
+				var yPos = parseFloat(d3.select(this).attr("y")) + 20;
+
+				//Create the tooltip label
+				svg.append("text")
+				  .attr("id", "tooltip")
+				  .attr("x", xPos)
+				  .attr("y", yPos)
+				  .attr("text-anchor", "middle")
+				  .attr("font-family", "sans-serif")
+				  .attr("font-size", "11px")
+				  .attr("font-weight", "bold")
+				  .attr("fill", "white")
+				  .text(Math.ceil(d3.select(this).attr("height") * maxY / 530));
+				console.log(Math.ceil(d3.select(this).attr("height") * maxY / 530));
+
+	       	})
+
+			.on("mouseout", function() {
+				if(d3.select(this).attr("fill") == "rgb(0, 0, 255)"){
+	       			d3.select(this)
+			   		.transition()
+			   		.duration(250)
+					.attr("fill", "rgb(70, 130, 180)");
+				}
+				else if(d3.select(this).attr("fill") == "rgb(153, 50, 204)"){
+	       			d3.select(this)
+			   		.transition()
+			   		.duration(250)
+					.attr("fill", "rgb(186, 85, 211)");
+				}
+
+				d3.select("#tooltip").remove();
+
+			});
+
+		// Add the x Axis
+		svg.append("g")
+		   .attr("class", "x_axis")
+		   .attr("transform", "translate(0," + h + ")")
+		   .call(d3.axisBottom(xScale));
+
+		// Text label for the x axis
+		svg.append("text")
+		   .attr("class", "x_axis_text")             
+	       .attr("transform","translate(" + (w/2) + " ," + (h + margin.top + 20) + ")")
+	       .style("text-anchor", "middle")
+	       .text("縣市名");
+
+        // Add the y Axis
+		svg.append("g")
+		   .attr("class", "y_axis")
+		   .call(d3.axisLeft(yScale));
+		// Text label for the y axis
+		svg.append("text")
+		   .attr("class", "y_axis_text")
+		   .attr("transform", "rotate(-90)")
+		   .attr("y", 0 - margin.left)
+		   .attr("x",0 - (h / 2))
+		   .attr("dy", "1em")
+		   .style("text-anchor", "middle")
+		   .text("幼稚園總數");
+
+		
+
+});
+
+	function updateHospital() {
+		// Scale the range of the data in the domains again
+		xScale.domain(city_data.map(function(d) { return d.city; }));
+		yScale.domain([0, d3.max(city_data, function(d) { return d.hos_count_city; })]);
+
+		// Update all rectangles
+		svg.selectAll(".bar")
+		   .data(city_data)
+		   .transition()
+		   .delay(function(d, i) {
+			    return i / city_data.length * 1000;
+			})
+		   .duration(1000)
+		   .attr("y", function(d) { return yScale(d.hos_count_city); })
+		   .attr("height", function(d) { return h - yScale(d.hos_count_city); })
+		   .attr("fill", "rgb(186, 85, 211)")
+
+		svg.select(".y_axis")
+		   .transition()
+		   .duration(1000)
+		   .call(d3.axisLeft(yScale));
+
+		svg.select(".y_axis_text")
+		   .transition()
+		   .duration(1000)
+		   .text("醫院總數")
+	}
+
+	function updateKindergarden() {
+		// Scale the range of the data in the domains again
+		xScale.domain(city_data.map(function(d) { return d.city; }));
+		yScale.domain([0, d3.max(city_data, function(d) { return d.k_count_city; })]);
+
+		// Update all rectangles
+		svg.selectAll(".bar")
+		   .data(city_data)
+		   .transition()
+		   .delay(function(d, i) {
+			    return i / city_data.length * 1000;
+			})
+		   .duration(1000)
+		   .attr("y", function(d) { return yScale(d.k_count_city); })
+		   .attr("height", function(d) { return h - yScale(d.k_count_city); })
+		   .attr("fill", "rgb(70, 130, 180)")
+
+		svg.select(".y_axis")
+		   .transition()
+		   .duration(1000)
+		   .call(d3.axisLeft(yScale));
+
+		svg.select(".y_axis_text")
+		   .transition()
+		   .duration(1000)
+		   .text("幼稚園總數")
+	}
+
+
+
+
+</script>
+</body>
+</html>

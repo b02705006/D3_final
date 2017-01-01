@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    svg { width:100%; height: 100% }
+
+  </style>
+</head>
+
+<body>
+  
+  <button onclick="showTopUniversities()">Show top 100 Universties</button>
+  <button onclick="showUniversityChoropleth()">Show number of universities for each country</button>
+
+  <script>
+    var width = 1024;
+    var height = 768;
+    
+    var svg = d3.select("body").append("svg");
+
+    var projection = d3.geoMercator()
+      .scale(width / 2 / Math.PI)
+      //.scale(100)
+      .translate([width / 2, height / 2])
+
+    var path = d3.geoPath()
+      .projection(projection);
+    
+    var url = "world-110m.geojson";
+//    d3.json(url, function(json) {
+    	
+//    });
+
+    // Set the range and domain for color (scaleQuantize)
+    var color = d3.scaleQuantize()
+                  .range(["#F2C972", "#E6A74F",
+                          "#DF8935", "#A35F28"]);
+    d3.csv("top_1000_summary.csv", function(data) {
+    	//console.log(data);
+    	data.forEach(function(d) {
+    		d.country = d.country;
+    		d.topUniversities = parseInt(d.topUniversities);
+    	})
+    	color.domain([d3.min(data, function(d) { return d.topUniversities; }),
+                	  d3.max(data, function(d) { return d.topUniversities; })]);
+    	
+    	// Add in the number of top universities for each country
+    	d3.json(url, function(json) {
+      		for(var i = 0; i < data.length; i++){
+      			var dataCountry = data[i].country;
+      			var dataTopUniversities = parseInt(data[i].topUniversities);
+      			//console.log(dataTopUniversities);
+      			for(var j = 0; j < json.features.length; j++){
+      				var jsonCountry = json.features[j].properties.name;
+      				if(dataCountry == jsonCountry){
+      					json.features[j].properties.n_topUniversities = dataTopUniversities;
+      					break;
+      				}
+      			}
+      		}
+
+      		svg.selectAll("path")
+			    .data(json.features)
+				.enter()
+				.append("path")
+				.attr("d", path)
+		        .attr("stroke", "white")
+		        .attr("stroke-width", "0.5px")
+		        //.attr("fill", "#E6A74E");
+		        .attr("fill", function(d) {
+		                    var n_topUniversities = d.properties.n_topUniversities;
+		                        if(n_topUniversities){
+		                        	console.log("found");
+		                        	return color(n_topUniversities);
+		                        }
+		                        else{
+		                        	console.log("nothing");
+		                        	return "#F8F3A5";
+		                        }
+		                        
+		    	});
+    	});
+	});
+
+
+
+
+
+    function showTopUniversities(){
+    	d3.csv("world_final.csv", function(data) {
+							
+			svg.selectAll("circle")
+			   .data(data)
+			   .enter()
+			   .append("circle")
+			   .attr("cx", function(d) {
+				   return projection([d.LONG, d.LAT])[0];
+			   })
+			   .attr("cy", function(d) {
+				   return projection([d.LONG, d.LAT])[1];
+			   })
+			   .attr("r", 3.5)
+			   .style("fill", "#9E7033")
+			   .on("mouseover", function(d) {
+			     d3.select(this).style("fill", "#4C2C00");
+			   })
+			   .on("mouseout", function(d) {
+			   	 d3.select(this).style("fill", "#9E7033");
+			   })
+			   .attr("stroke", "white")
+			   .attr("stroke-width", "0.6")
+			   .style("opacity", 0.75);
+			
+		});
+
+    }
+
+
+    function showUniversityChoropleth(){
+/*		
+		d3.json(url, function(json) {
+
+			svg.selectAll("path")
+		        .attr("fill", function(d) {
+		                    var n_topUniversities = d.properties.n_topUniversities;
+		                        if(n_topUniversities){
+		                        	console.log("found");
+		                        	return color(n_topUniversities);
+		                        }
+		                        else{
+		                        	console.log("nothing");
+		                        	return "#ccc";
+		                        }
+		                        
+		    	});
+
+    	});    	
+*/
+    }
+
+
+
+
+
+    
+  </script>
+</body>
