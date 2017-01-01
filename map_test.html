@@ -52,24 +52,29 @@
 			   .data(data)
 			   .enter()
 			   .append("circle")
+			   
+
 			   .attr("cx", function(d) {
 				   return projection([d.LONG, d.LAT])[0];
 			   })
 			   .attr("cy", function(d) {
 				   return projection([d.LONG, d.LAT])[1];
 			   })
+			   .transition()
+			   .duration(750)
 			   .attr("r", 3.5)
 			   .style("fill", "#9E7033")
+			   .attr("stroke", "white")
+			   .attr("stroke-width", "0.6")
+			   .style("opacity", 0.75)
+			   /*
 			   .on("mouseover", function(d) {
 			     d3.select(this).style("fill", "#4C2C00");
 			   })
 			   .on("mouseout", function(d) {
 			   	 d3.select(this).style("fill", "#9E7033");
-			   })
-			   .attr("stroke", "white")
-			   .attr("stroke-width", "0.6")
-			   .style("opacity", 0.75);
-			
+			   });
+			   */
 		});
 
     }
@@ -97,10 +102,10 @@
 		      					json.features[j].properties.n_topUniversities = dataTopUniversities;
 		      					break;
 		      				}
-		      				console.log(json.features[j].properties.n_topUniversities);
+		      				//console.log(json.features[j].properties.n_topUniversities);
 		      			}
 		      		}
-		      		console.log("hey");
+		      		//console.log("hey");
 		      		svg.selectAll("path")
 		      				.data(json.features)
 							.transition()
@@ -108,15 +113,15 @@
 				            .attr("fill", function(d) {
 			                    var n_topUniversities = d.properties.n_topUniversities;
 			                        if(n_topUniversities){
-			                        	console.log("found");
+			                        	//console.log("found");
 			                        	return color(n_topUniversities);
 			                        }
 			                        else{
-			                        	console.log("nothing");
+			                        	//console.log("nothing");
 			                        	return "#F8F3A5";
 			                        }          	
 			    			});
-			    	console.log("hi");
+			    	//console.log("hi");
 		      	});
 			});
     }
