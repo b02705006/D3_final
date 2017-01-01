@@ -29,63 +29,20 @@
       .projection(projection);
     
     var url = "world-110m.geojson";
-//    d3.json(url, function(json) {
-    	
-//    });
-
     // Set the range and domain for color (scaleQuantize)
     var color = d3.scaleQuantize()
                   .range(["#F2C972", "#E6A74F",
                           "#DF8935", "#A35F28"]);
-    d3.csv("top_1000_summary.csv", function(data) {
-    	//console.log(data);
-    	data.forEach(function(d) {
-    		d.country = d.country;
-    		d.topUniversities = parseInt(d.topUniversities);
-    	})
-    	color.domain([d3.min(data, function(d) { return d.topUniversities; }),
-                	  d3.max(data, function(d) { return d.topUniversities; })]);
-    	
-    	// Add in the number of top universities for each country
-    	d3.json(url, function(json) {
-      		for(var i = 0; i < data.length; i++){
-      			var dataCountry = data[i].country;
-      			var dataTopUniversities = parseInt(data[i].topUniversities);
-      			//console.log(dataTopUniversities);
-      			for(var j = 0; j < json.features.length; j++){
-      				var jsonCountry = json.features[j].properties.name;
-      				if(dataCountry == jsonCountry){
-      					json.features[j].properties.n_topUniversities = dataTopUniversities;
-      					break;
-      				}
-      			}
-      		}
-
-      		svg.selectAll("path")
+    d3.json(url, function(json) {
+      svg.selectAll("path")
 			    .data(json.features)
 				.enter()
 				.append("path")
 				.attr("d", path)
-		        .attr("stroke", "white")
+        		.attr("stroke", "white")
 		        .attr("stroke-width", "0.5px")
-		        //.attr("fill", "#E6A74E");
-		        .attr("fill", function(d) {
-		                    var n_topUniversities = d.properties.n_topUniversities;
-		                        if(n_topUniversities){
-		                        	console.log("found");
-		                        	return color(n_topUniversities);
-		                        }
-		                        else{
-		                        	console.log("nothing");
-		                        	return "#F8F3A5";
-		                        }
-		                        
-		    	});
-    	});
-	});
-
-
-
+		        .attr("fill", "#E6A74E");
+    })
 
 
     function showTopUniversities(){
@@ -119,25 +76,49 @@
 
 
     function showUniversityChoropleth(){
-/*		
-		d3.json(url, function(json) {
-
-			svg.selectAll("path")
-		        .attr("fill", function(d) {
-		                    var n_topUniversities = d.properties.n_topUniversities;
-		                        if(n_topUniversities){
-		                        	console.log("found");
-		                        	return color(n_topUniversities);
-		                        }
-		                        else{
-		                        	console.log("nothing");
-		                        	return "#ccc";
-		                        }
-		                        
-		    	});
-
-    	});    	
-*/
+		d3.csv("top_1000_summary.csv", function(data) {
+		    	//console.log(data);
+		    	data.forEach(function(d) {
+		    		d.country = d.country;
+		    		d.topUniversities = parseInt(d.topUniversities);
+		    	})
+		    	color.domain([d3.min(data, function(d) { return d.topUniversities; }),
+		                	  d3.max(data, function(d) { return d.topUniversities; })]);
+		    	
+		    	// Add in the number of top universities for each country
+		    	d3.json(url, function(json) {
+		      		for(var i = 0; i < data.length; i++){
+		      			var dataCountry = data[i].country;
+		      			var dataTopUniversities = parseInt(data[i].topUniversities);
+		      			//console.log(dataTopUniversities);
+		      			for(var j = 0; j < json.features.length; j++){
+		      				var jsonCountry = json.features[j].properties.name;
+		      				if(dataCountry == jsonCountry){
+		      					json.features[j].properties.n_topUniversities = dataTopUniversities;
+		      					break;
+		      				}
+		      				console.log(json.features[j].properties.n_topUniversities);
+		      			}
+		      		}
+		      		console.log("hey");
+		      		svg.selectAll("path")
+		      				.data(json.features)
+							.transition()
+				            .duration(750)
+				            .attr("fill", function(d) {
+			                    var n_topUniversities = d.properties.n_topUniversities;
+			                        if(n_topUniversities){
+			                        	console.log("found");
+			                        	return color(n_topUniversities);
+			                        }
+			                        else{
+			                        	console.log("nothing");
+			                        	return "#F8F3A5";
+			                        }          	
+			    			});
+			    	console.log("hi");
+		      	});
+			});
     }
 
 
