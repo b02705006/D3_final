@@ -5,14 +5,32 @@
   <style>
     body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
     svg { width:100%; height: 100% }
+    .button_label {
+    	width: 1024px;
+    	height: 48px;
+    }
+    .gradient_scale {
+    	background: linear-gradient(to right,  #fcf29c 0%,#de8926 50%,#663413 100%);
+    	display: block;
+    	margin-bottom: 24px;
+    	width: 1024px;
+    	height: 24px;
+    	opacity: 0;
+    }
 
   </style>
 </head>
 
 <body>
+  <div class="button_label">
+	  <button onclick="showTopUniversities()">Show top 100 Universties</button>
+	  <button onclick="showUniversityChoropleth()">Show number of universities for each country</button>
+  </div>
+  <div class="gradient_scale" id="grad_sc">
+  	
+
+  </div>
   
-  <button onclick="showTopUniversities()">Show top 100 Universties</button>
-  <button onclick="showUniversityChoropleth()">Show number of universities for each country</button>
 
   <script>
     var width = 1024;
@@ -22,7 +40,7 @@
 
     var projection = d3.geoMercator()
       .scale(width / 2 / Math.PI)
-      //.scale(100)
+      //.scale(100)	
       .translate([width / 2, height / 2])
 
     var path = d3.geoPath()
@@ -124,6 +142,8 @@
 			    	//console.log("hi");
 		      	});
 			});
+		document.getElementById("grad_sc").style.opacity = 1;
+		console.log("dafuq");
     }
 
 
