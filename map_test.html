@@ -7,12 +7,12 @@
     svg { width:100%; height: 100% }
     .button_label {
     	width: 1024px;
-    	height: 48px;
+    	height: 32px;
     }
     .gradient_scale {
     	background: linear-gradient(to right,  #fcf29c 0%,#de8926 50%,#663413 100%);
     	display: block;
-    	margin-bottom: 24px;
+    	margin-bottom: 12px;
     	width: 1024px;
     	height: 24px;
     	opacity: 0;
@@ -22,11 +22,91 @@
 		-ms-transition: all 1s ease-in-out;
 		transition: all 1s ease-in-out;
     }
+/*
+    #tooltip {
+				position: absolute;
+				width: 200px;
+				height: auto;
+				padding: 10px;
+				background-color: white;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+				-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+				box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+				pointer-events: none;
+			}
+*/			
+	#tooltip_top_100.hidden {
+		display: none;
+	}
+/*	
+	#tooltip p {
+		margin: 0;
+		font-family: sans-serif;
+		font-size: 16px;
+		line-height: 20px;
+	}
+*/	
+	  #tooltip_top_100
+	  {
+	    position: absolute;
+	    width: 105px;
+	    height: auto;
+	    padding: 5px;
+	    background-color: white;
+	    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	    
+	  }
+	  #school_name
+	  {
+	    font-family: "neutra-2-text-1";
+	    font-weight: bold;
+	    font-size: 14px;
+	    border-bottom: 1px solid black;
+	    padding-bottom: 5px;
+	    margin-bottom: 5px;
+	  }
+	  .university_tip {font-size: 10px; font-family: "neutra-2-text-1", sans-serif;  }
 
   </style>
 </head>
 
 <body>
+
+	<div id="tooltip_top_100" class="hidden">
+      <div id="school_name">Harvard</div>
+      <div>
+      	<img src="" height="100" width="100" id="school_logo">
+      </div>
+      <div id="ranking">
+        <p class="university_tip">Rank among the top 100 universities: 
+        	<strong><span id="ranking_text"></span></strong>
+        </p>
+      </div>
+      <div class="university_tip">
+      	<!--
+      		<p class="university_tip">School website:</p>
+      	-->
+      	<a href="http://www.google.com"  id="school_website">http://www.google.com</a>
+
+      	
+      </div>
+   	</div>
+
+
+
+
+<!--
+	<div id="tooltip" class="hidden">
+		<p><strong id="school_name"></strong></p>
+		<p><span id="ranking">1</span></p>
+	</div>
+-->
+
   <div class="button_label">
 	  <button onclick="showTopUniversities()">Show top 100 Universties</button>
 	  <button onclick="showUniversityChoropleth()">Show number of universities for each country</button>
@@ -73,13 +153,59 @@
 			   .data(data)
 			   .enter()
 			   .append("circle")
-			   
 
 			   .attr("cx", function(d) {
-				   return projection([d.LONG, d.LAT])[0];
+				   return projection([d.long, d.lat])[0];
 			   })
 			   .attr("cy", function(d) {
-				   return projection([d.LONG, d.LAT])[1];
+				   return projection([d.long, d.lat])[1];
+			   })
+			   .on("mouseover", function(d) {
+			     	// Change color
+			     	d3.select(this).style("fill", "#4C2C00");
+				    
+				    //Get the circle's cx/cy values
+					var xPosition = parseFloat(d3.select(this).attr("cx"));
+					var yPosition = parseFloat(d3.select(this).attr("cy"));
+
+					//Update the tooltip position and value
+					var tooltip = 
+						d3.select("#tooltip_top_100");
+
+					tooltip.classed("hidden", false);
+
+					tooltip.transition()
+			            .duration(500)    
+			            .style("opacity", 0);
+
+			        tooltip.transition()    
+			            .style("opacity", .9)
+			            .style("left", xPosition + "px")
+					    .style("top", yPosition + "px");    
+					  
+					tooltip.select("#school_name")
+					  .text(d.institution);
+
+					tooltip.select("#ranking_text")
+					  .text(d.world_rank);
+
+					tooltip.select("#school_website")
+					  .text(d.web_addr);
+
+					tooltip.select("#school_website")
+					  .attr('href', "http://" + d.web_addr)
+					tooltip.select("#school_website")
+					  .attr('target', "blank")
+
+					tooltip.select("#school_logo")
+					  .attr('src', "http://" + d.logo_source)
+
+
+			   })
+			   .on("mouseout", function(d) {
+			   	 d3.select(this).style("fill", "#9E7033");
+			   	 //Hide the tooltip
+				 //d3.select("#tooltip_top_100").classed("hidden", true);
 			   })
 			   .transition()
 			   .duration(750)
@@ -88,6 +214,7 @@
 			   .attr("stroke", "white")
 			   .attr("stroke-width", "0.6")
 			   .style("opacity", 0.75)
+
 			   /*
 			   .on("mouseover", function(d) {
 			     d3.select(this).style("fill", "#4C2C00");
@@ -145,7 +272,7 @@
 			    	//console.log("hi");
 		      	});
 			});
-		document.getElementById("grad_sc").style.opacity = 1;
+		document.getElementById("grad_sc").style.opacity = 0.9;
 		console.log("dafuq");
     }
 

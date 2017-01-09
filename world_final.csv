@@ -1,101 +1,101 @@
-,world_rank,institution,country,LONG,LAT,
-1,1,Harvard University,USA,-71.118177,42.374429,
-2,2,Stanford University,USA,-122.182212,37.431746,
-3,3,Massachusetts Institute of Technology,USA,-71.092115,42.360095,
-4,4,University of Cambridge,United Kingdom,0.115163,52.204328,
-5,5,University of Oxford,United Kingdom,-1.254854,51.756641,
-6,6,Columbia University,USA,-73.961885,40.808286,
-7,7,"University of California, Berkeley",USA,-122.2604,37.87152,
-8,8,University of Chicago,USA,-87.601196,41.78917,
-9,9,Princeton University,USA,-74.664365,40.348235,
-10,10,Cornell University,USA,-76.48269,42.44529,
-11,11,Yale University,USA,-72.92886,41.310189,
-12,12,California Institute of Technology,USA,-118.12574,34.139275,
-13,13,University of Tokyo,Japan,139.762225,35.712677,
-14,14,University of Pennsylvania,USA,-75.193618,39.951002,
-15,15,"University of California, Los Angeles",USA,-118.443901,34.068892,
-16,16,Johns Hopkins University,USA,-76.620799,39.32838,
-17,17,Kyoto University,Japan,135.781047,35.02671,
-18,18,New York University,USA,-73.997264,40.729452,
-19,19,"University of Michigan, Ann Arbor",USA,-83.743132,42.276137,
-20,20,Swiss Federal Institute of Technology in Zurich,Switzerland,8.547927,47.376291,
-21,21,"University of California, San Diego",USA,-117.237793,32.876598,
-22,22,Northwestern University,USA,-87.673653,42.058377,
-23,23,Hebrew University of Jerusalem,Israel,35.241744,31.794567,
-24,24,Seoul National University,South Korea,126.951884,37.459908,
-25,25,"University of Wisconsin, Madison",USA,-89.405356,43.073858,
-26,26,"University of California, San Francisco",USA,-122.458049,37.762736,
-27,27,University College London,United Kingdom,-0.133966,51.524613,
-28,28,Duke University,USA,-78.94226,36.00159,
-29,29,Rockefeller University,USA,-73.954912,40.762927,
-30,30,"University of Texa, Austin",USA,-97.737277,30.284734,
-31,31,"University of Washington, Seattle",USA,-122.313115,47.656213,
-32,32,University of Toronto,Canada,-79.405176,43.701713,
-33,33,"University of Illinois, Urbana-Champaign",USA,-88.230309,40.108864,
-34,34,Keio University,Japan,139.742948,35.649165,
-35,35,Imperial College London,United Kingdom,-0.174384,51.498673,
-36,36,?cole Polytechnique,France,2.212161,48.714417,
-37,37,?cole normale sup?rieure Paris-Saclay,France,2.327524,48.78906,
-38,38,Waseda University,Japan,139.720826,35.709199,
-39,39,Weizmann Institute of Science,Israel,34.809832,31.904339,
-40,40,University of North Carolina at Chapel Hill,USA,-79.050969,35.912165,
-41,41,University of Virginia,USA,-78.502597,38.036548,
-42,42,McGill University,Canada,-73.577205,45.504837,
-43,43,Purdue University,USA,-86.914435,40.428206,
-44,44,Dartmouth College,USA,-72.260331,43.71365,
-45,45,Osaka University,Japan,135.524435,34.822023,
-46,46,"University of Pittsburgh, Pittsburgh Campus",USA,-79.954692,40.444502,
-47,47,"Pennsylvania State University, University Park",USA,-77.861644,40.800732,
-48,48,"University of Minnesota, Twin Cities",USA,-93.235352,44.977886,
-49,49,"Ohio State University, Columbus",USA,-83.009001,39.998389,
-50,50,Rutgers University-New Brunswick,USA,-74.45051,40.503796,
-51,51,University of Southern California,USA,-118.283858,34.021058,
-52,52,"Washington University, St. Louis",USA,-90.311639,38.648125,
-53,53,"University of California, Davis",USA,-121.751958,38.539895,
-54,54,University of Colorado Boulder,USA,-105.267061,40.004415,
-55,55,University of Edinburgh,United Kingdom,-3.189252,55.944564,
-56,56,Peking University,China,116.312198,39.986683,
-57,57,National Taiwan University,Taiwan,121.539526,25.017214,
-58,58,University of Paris-Sud,France,2.176763,48.697685,
-59,59,Lomonosov Moscow State University,Russia,37.528262,55.704159,
-60,60,University of Florida,USA,-82.361195,29.638248,
-61,61,Carnegie Mellon University,USA,-79.942914,40.444616,
-62,62,University of British Columbia,Canada,-123.246155,49.260626,
-63,63,Pierre and Marie Curie University,France,2.357478,48.847089,
-64,64,"University of California, Santa Barbara",USA,-119.848071,34.415461,
-65,65,National University of Singapore,Singapore,103.77633,1.296546,
-66,66,Boston University,USA,-71.09984,42.349581,
-67,67,University of Manchester,United Kingdom,-2.234238,53.466748,
-68,68,University of Arizona,USA,-110.950769,32.232071,
-69,69,Vanderbilt University,USA,-86.804875,36.14443,
-70,70,University of Utah,USA,-111.846044,40.762484,
-71,71,Karolinska Institute,Sweden,18.023658,59.348127,
-72,72,"University of Maryland, College Park",USA,-76.939704,38.988607,
-73,73,Tohoku University,Japan,140.874053,38.253817,
-74,74,University of Copenhagen,Denmark,12.57212,55.680176,
-75,75,University of Texas Southwestern Medical Center,USA,-96.842311,32.819539,
-76,76,Ruprecht Karl University of Heidelberg,Germany,8.670024,49.419098,
-77,77,University of Notre Dame,USA,-86.289848,41.616717,
-78,78,Tsinghua University,China,116.326433,39.999651,
-79,79,Ludwig Maximilian University of Munich,Germany,11.582529,48.150942,
-80,80,Georgia Institute of Technology,USA,-84.396231,33.775502,
-81,81,University of Rochester,USA,-77.631622,43.12658,
-82,82,Katholieke Universiteit Leuven,Belgium,4.700413,50.877975,
-83,83,Brown University,USA,-71.404467,41.827605,
-84,84,Emory University,USA,-84.325782,33.798836,
-85,85,Erasmus University Rotterdam,Netherlands,4.525789,51.917546,
-86,86,Tel Aviv University,Israel,34.80428,32.113323,
-87,87,Utrecht University,Netherlands,5.122698,52.090192,
-88,88,University of Sydney,Australia,151.187143,-33.888477,
-89,89,"University of California, Irvine",USA,-117.768639,33.667002,
-90,90,University of Texas MD Anderson Cancer Center,USA,-95.40079,29.705395,
-91,91,Swiss Federal Institute of Technology in Lausanne,Switzerland,6.566843,46.519144,
-92,92,University of Geneva,Switzerland,6.145309,46.199355,
-93,93,University of Melbourne,Australia,144.961388,-37.79631,
-94,94,King's College London,United Kingdom,-0.116029,51.5115,
-95,95,Tufts University,USA,-71.120641,42.406004,
-96,96,University of Zurich,Switzerland,8.551013,47.374322,
-97,97,Arizona State University,USA,-111.940011,33.421921,
-98,98,Yonsei University,South Korea,126.938626,37.56575,
-99,99,University of Oslo,Norway,10.722029,59.940034,
-100,100,Kyushu University,Japan,130.425012,33.626721,
+,world_rank,institution,country,long,lat,web_addr,logo_source
+1,1,Harvard University,USA,-71.118177,42.374429,www.harvard.edu/,upload.wikimedia.org/wikipedia/en/thumb/3/3a/Harvard_Wreath_Logo_1.svg/1051px-Harvard_Wreath_Logo_1.svg.png
+2,2,Stanford University,USA,-122.182212,37.431746,www.stanford.edu/,lh5.googleusercontent.com/-9ZtfI7Iadbo/AAAAAAAAAAI/AAAAAAAAASM/pa_22SDQqFI/s0-c-k-no-ns/photo.jpg
+3,3,Massachusetts Institute of Technology,USA,-71.092115,42.360095,web.mit.edu/student/,lh6.googleusercontent.com/-HXcwA8OCaSU/AAAAAAAAAAI/AAAAAAAAQq0/FJOLa4BlZ60/s0-c-k-no-ns/photo.jpg
+4,4,University of Cambridge,United Kingdom,0.115163,52.204328,www.cam.ac.uk/,lh6.googleusercontent.com/-rFQq0uABBsk/AAAAAAAAAAI/AAAAAAAAAII/_Zw9MFOtXEY/s0-c-k-no-ns/photo.jpg
+5,5,University of Oxford,United Kingdom,-1.254854,51.756641,www.ox.ac.uk/,lh6.googleusercontent.com/-Ygm5DjbVLPM/AAAAAAAAAAI/AAAAAAAAACs/N2wImWuAcFc/s0-c-k-no-ns/photo.jpg
+6,6,Columbia University,USA,-73.961885,40.808286,www.columbia.edu/,lh3.googleusercontent.com/-4LORSEgp28U/AAAAAAAAAAI/AAAAAAAAErY/W4Ug6i3Vc64/s0-c-k-no-ns/photo.jpg
+7,7,"University of California, Berkeley",USA,-122.2604,37.87152,berkeley.edu/,studycalifornia.us/wp-content/uploads/ucberkeley_01.jpg
+8,8,University of Chicago,USA,-87.601196,41.78917,www.uchicago.edu/,lh6.googleusercontent.com/-lWeBqmalLYk/AAAAAAAAAAI/AAAAAAAAAkU/4Ms5cd4gBhU/s0-c-k-no-ns/photo.jpg
+9,9,Princeton University,USA,-74.664365,40.348235,www.princeton.edu,i.vimeocdn.com/portrait/1637819_640x640
+10,10,Cornell University,USA,-76.48269,42.44529,www.cornell.edu,files.graphiq.com/5307/media/images/Cornell_University_7508474.png
+11,11,Yale University,USA,-72.92886,41.310189,www.yale.edu,lh5.googleusercontent.com/-8MnYb1DXXXI/AAAAAAAAAAI/AAAAAAAAADE/HnWmw65TZQQ/s0-c-k-no-ns/photo.jpg
+12,12,California Institute of Technology,USA,-118.12574,34.139275,www.caltech.edu,upload.wikimedia.org/wikipedia/zh/thumb/b/bd/Caltech_Seal.png/200px-Caltech_Seal.png
+13,13,University of Tokyo,Japan,139.762225,35.712677,www.u-tokyo.ac.jp/index_e.html,upload.wikimedia.org/wikipedia/commons/thumb/c/c2/UnivOfTokyo_logo.svg/150px-UnivOfTokyo_logo.svg.png
+14,14,University of Pennsylvania,USA,-75.193618,39.951002,www.upenn.edu,lh5.googleusercontent.com/-40Vqb2L3L_E/AAAAAAAAAAI/AAAAAAAAMaM/uc5uSWj32lE/s0-c-k-no-ns/photo.jpg
+15,15,"University of California, Los Angeles",USA,-118.443901,34.068892,www.ucla.edu/,lh5.googleusercontent.com/-d5xiAp-5daE/AAAAAAAAAAI/AAAAAAAAADE/isyaVAht8CU/s0-c-k-no-ns/photo.jpg
+16,16,Johns Hopkins University,USA,-76.620799,39.32838,www.jhu.edu,lh4.googleusercontent.com/-vt0qVScbeaE/AAAAAAAAAAI/AAAAAAAAAZY/PJXCeqlyXc0/s0-c-k-no-ns/photo.jpg
+17,17,Kyoto University,Japan,135.781047,35.02671,www.kyoto-u.ac.jp/,upload.wikimedia.org/wikipedia/zh/thumb/b/b0/Kyoto_University.svg/150px-Kyoto_University.svg.png
+18,18,New York University,USA,-73.997264,40.729452,www.nyu.edu,yt3.ggpht.com/-RZYi5isxH_M/AAAAAAAAAAI/AAAAAAAAAAA/rmWpoe2qZzI/s900-c-k-no/photo.jpg
+19,19,"University of Michigan, Ann Arbor",USA,-83.743132,42.276137,umich.edu/,lh4.googleusercontent.com/-Rccq-Fi8TzA/AAAAAAAAAAI/AAAAAAAAAHU/Pb-WivSkb8I/s0-c-k-no-ns/photo.jpg
+20,20,Swiss Federal Institute of Technology in Zurich,Switzerland,8.547927,47.376291,www.ethz.ch/en.html,www.iau-hesd.net/sites/default/files/styles/univ_205/public/universites/swiss_federal_institute_of_technology_zurich.png?itok=xLOJ-je9
+21,21,"University of California, San Diego",USA,-117.237793,32.876598,ucsd.edu/,lh6.googleusercontent.com/-b65tc3eB8Qw/AAAAAAAAAAI/AAAAAAAABqE/jzsy8IhecD4/s0-c-k-no-ns/photo.jpg
+22,22,Northwestern University,USA,-87.673653,42.058377,www.northwestern.edu,lh5.googleusercontent.com/-bxmHzirHOIs/AAAAAAAAAAI/AAAAAAAAAZM/ZFEv-Lst88k/s0-c-k-no-ns/photo.jpg
+23,23,Hebrew University of Jerusalem,Israel,35.241744,31.794567,new.huji.ac.il/en,upload.wikimedia.org/wikipedia/zh/c/cd/Hebrew_University_Logo_2.png
+24,24,Seoul National University,South Korea,126.951884,37.459908,www.useoul.edu/,upload.wikimedia.org/wikipedia/zh/6/6a/Seoul_national_university_emblem.png
+25,25,"University of Wisconsin, Madison",USA,-89.405356,43.073858,www.wisc.edu/,d28htnjz2elwuj.cloudfront.net/wp-content/uploads/2013/11/University_of_Wisconsin_Madison_Logo.jpg
+26,26,"University of California, San Francisco",USA,-122.458049,37.762736,www.ucsf.edu/,lh6.googleusercontent.com/-2-74pdTkJww/AAAAAAAAAAI/AAAAAAAAASI/UXHi93nluq0/s0-c-k-no-ns/photo.jpg
+27,27,University College London,United Kingdom,-0.133966,51.524613,www.ucl.ac.uk/,lh6.googleusercontent.com/-4hLi1gPW2_0/AAAAAAAAAAI/AAAAAAAAATU/qnDhMHwIfdw/s0-c-k-no-ns/photo.jpg
+28,28,Duke University,USA,-78.94226,36.00159,www.duke.edu/,yt3.ggpht.com/-RqeU1zU7XUs/AAAAAAAAAAI/AAAAAAAAAAA/IsU_tUMM90s/s900-c-k-no-mo-rj-c0xffffff/photo.jpg
+29,29,Rockefeller University,USA,-73.954912,40.762927,www.rockefeller.edu,filestore.51xuanxiao.com/Resources/pic/usa-school-icon/2062.jpg
+30,30,"University of Texa, Austin",USA,-97.737277,30.284734,www.utexas.edu/,lh4.googleusercontent.com/-HOPTogd7hzc/AAAAAAAAAAI/AAAAAAAAGMg/LTsDT_BwTFU/s0-c-k-no-ns/photo.jpg
+31,31,"University of Washington, Seattle",USA,-122.313115,47.656213,www.washington.edu/,lh4.googleusercontent.com/-OEpZSoFBCco/AAAAAAAAAAI/AAAAAAAAKcU/LVeXUAJ7AVg/s0-c-k-no-ns/photo.jpg
+32,32,University of Toronto,Canada,-79.405176,43.701713,www.utoronto.ca/,cupanion.com/wordpress/wp-content/uploads/2015/09/University-of-Toronto-logo_0-1.jpg
+33,33,"University of Illinois, Urbana-Champaign",USA,-88.230309,40.108864,illinois.edu/,upload.wikimedia.org/wikipedia/commons/thumb/5/57/UIUC.png/200px-UIUC.png
+34,34,Keio University,Japan,139.742948,35.649165,www.keio.ac.jp/,upload.wikimedia.org/wikipedia/zh/a/ab/Keio_University_Crest.png
+35,35,Imperial College London,United Kingdom,-0.174384,51.498673,www.imperial.ac.uk/,wwwf.imperial.ac.uk/~dgcrowdy/ImperialCrest.jpg
+36,36,?cole Polytechnique,France,2.212161,48.714417,www.polytechnique.edu/,lh3.googleusercontent.com/-QIWtp8fPUZ0/AAAAAAAAAAI/AAAAAAAAABU/xveN1EU_iao/s0-c-k-no-ns/photo.jpg
+37,37,?cole normale sup?rieure Paris-Saclay,France,2.327524,48.78906,www.ens-cachan.fr/,www.universite-paris-saclay.fr/sites/default/files/logoens.jpg
+38,38,Waseda University,Japan,139.720826,35.709199,www.waseda.jp/,upload.wikimedia.org/wikipedia/en/thumb/0/0d/Waseda_University_Logo.svg/1024px-Waseda_University_Logo.svg.png
+39,39,Weizmann Institute of Science,Israel,34.809832,31.904339,www.weizmann.ac.il/,media.licdn.com/mpr/mpr/shrink_200_200/p/1/005/093/06e/094d865.png
+40,40,University of North Carolina at Chapel Hill,USA,-79.050969,35.912165,www.unc.edu/,www.prolinkedu.com/school/usa/unis/university_pictures/University_of_North_Carolina_Chapel_Hill_logo
+41,41,University of Virginia,USA,-78.502597,38.036548,www.virginia.edu/,d28htnjz2elwuj.cloudfront.net/wp-content/uploads/2013/11/University_of_Virginia_Logo.jpg
+42,42,McGill University,Canada,-73.577205,45.504837,www.mcgill.ca/,www.universitas21.com/upload/member/logo/full/8McGill.jpg
+43,43,Purdue University,USA,-86.914435,40.428206,www.purdue.edu/,media.licdn.com/mpr/mpr/shrink_200_200/p/1/005/008/0c9/04cf063.png
+44,44,Dartmouth College,USA,-72.260331,43.71365,www.dartmouth.edu,img2.findthebest.com/sites/default/files/10/media/images/t2/Dartmouth_College_1015895.png
+45,45,Osaka University,Japan,135.524435,34.822023,www.osaka-u.ac.jp/,upload.wikimedia.org/wikipedia/en/thumb/6/65/Osaka_University_logo.svg/1024px-Osaka_University_logo.svg.png
+46,46,"University of Pittsburgh, Pittsburgh Campus",USA,-79.954692,40.444502,www.pitt.edu/,2.bp.blogspot.com/-eHqFfGPzkX8/UV2s6_F5qxI/AAAAAAAAAe0/1uNCccvy6Tg/s1600/university+of+pittsburgh.png
+47,47,"Pennsylvania State University, University Park",USA,-77.861644,40.800732,www.psu.edu/,www.hillel.org/CGimages/IMAGE-03062012093452.jpg
+48,48,"University of Minnesota, Twin Cities",USA,-93.235352,44.977886,twin-cities.umn.edu/,pbs.twimg.com/profile_images/794194466655510528/2dGxLAzL.jpg
+49,49,"Ohio State University, Columbus",USA,-83.009001,39.998389,www.osu.edu/,files.graphiq.com/10/media/images/Ohio_State_University-Main_Campus_1_220283.png
+50,50,Rutgers University-New Brunswick,USA,-74.45051,40.503796,www.rutgers.edu/,"upload.wikimedia.org/wikipedia/en/c/ce/Rutgers,_The_State_University_of_New_Jersey_logo.png"
+51,51,University of Southern California,USA,-118.283858,34.021058,www.usc.edu/,lh6.googleusercontent.com/-c9dn91oPgno/AAAAAAAAAAI/AAAAAAAAB_0/VP8bNTCSFr4/s0-c-k-no-ns/photo.jpg
+52,52,"Washington University, St. Louis",USA,-90.311639,38.648125,wustl.edu/,lh6.googleusercontent.com/-hj7te97akzY/AAAAAAAAAAI/AAAAAAAADZg/Y1W0rLm0eT0/s0-c-k-no-ns/photo.jpg
+53,53,"University of California, Davis",USA,-121.751958,38.539895,www.ucdavis.edu/,lh4.googleusercontent.com/-GCqTj_toKU0/AAAAAAAAAAI/AAAAAAAABFc/jAzHYa77a-A/s0-c-k-no-ns/photo.jpg
+54,54,University of Colorado Boulder,USA,-105.267061,40.004415,www.colorado.edu,lh3.googleusercontent.com/-WyTYrXLQPlA/AAAAAAAAAAI/AAAAAAAAAIA/6c_ueuzxk4M/s0-c-k-no-ns/photo.jpg
+55,55,University of Edinburgh,United Kingdom,-3.189252,55.944564,www.ed.ac.uk/,upload.wikimedia.org/wikipedia/en/thumb/7/7a/University_of_Edinburgh_ceremonial_roundel.svg/1017px-University_of_Edinburgh_ceremonial_roundel.svg.pngUniversity_of_Edinburgh_ceremonial_roundel.svg/1017px-University_of_Edinburgh_ceremonial_roundel.svg.png
+56,56,Peking University,China,116.312198,39.986683,www.pku.edu.cn/,www.google.com.tw/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwi6xrzOr7XRAhUMbrwKHT26DaYQjBwIBA&url=https%3A%2F%2Fwww.unf.edu%2FuploadedImages%2Faa%2Fcoggin%2Fabroad%2Fsemester%2F2000px-Peking_University_seal.svg.png&psig=AFQjCNEv52Sf-09GdFipyBbhwFGTyLN-0g&ust=1484061920201836
+57,57,National Taiwan University,Taiwan,121.539526,25.017214,www.ntu.edu.tw/,www.ntu.edu.tw/about/doc/Emblem72.jpg
+58,58,University of Paris-Sud,France,2.176763,48.697685,www.u-psud.fr/en/,www.u-psud.fr/skins/skinzee/resources/img/og-image.png
+59,59,Lomonosov Moscow State University,Russia,37.528262,55.704159,www.msu.ru/en/,stanislavpugach.com/wp-content/uploads/1993/06/logo-011.png
+60,60,University of Florida,USA,-82.361195,29.638248,www.ufl.edu/,lh3.googleusercontent.com/-mFo27EtzsY8/AAAAAAAAAAI/AAAAAAAAB8w/n6CtdS5ZAVY/s0-c-k-no-ns/photo.jpg
+61,61,Carnegie Mellon University,USA,-79.942914,40.444616,www.cmu.edu/,upload.wikimedia.org/wikipedia/en/thumb/b/bb/Carnegie_Mellon_University_seal.svg/1024px-Carnegie_Mellon_University_seal.svg.png
+62,62,University of British Columbia,Canada,-123.246155,49.260626,www.ubc.ca/,media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAfcAAAAJDMwMjRkMzQ3LWY5ZGYtNDRkZS1hZWVjLTNiNjVjNGVkNzAzMg.png
+63,63,Pierre and Marie Curie University,France,2.357478,48.847089,www.upmc.fr/en/,media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAjhAAAAJGU4MmU5MjVjLTc3YmMtNGUzNy04YjhhLTFjODkzZmY2ZTM0OQ.png
+64,64,"University of California, Santa Barbara",USA,-119.848071,34.415461,www.ucsb.edu/,upload.wikimedia.org/wikipedia/en/thumb/4/49/UC_Santa_Barbara_seal.svg/1024px-UC_Santa_Barbara_seal.svg.png
+65,65,National University of Singapore,Singapore,103.77633,1.296546,www.nus.edu.sg/,lh6.googleusercontent.com/-4lA_p7eDoUo/AAAAAAAAAAI/AAAAAAAAAFU/664wsbv3ECA/s0-c-k-no-ns/photo.jpg
+66,66,Boston University,USA,-71.09984,42.349581,www.bu.edu,s-media-cache-ak0.pinimg.com/originals/87/72/32/877232d0c412b0b4c74c736d8a56bea2.gif
+67,67,University of Manchester,United Kingdom,-2.234238,53.466748,www.manchester.ac.uk/,coursera-university-assets.s3.amazonaws.com/31/9e50fd81feadf1d272e274cba91f05/360x360-logo.png
+68,68,University of Arizona,USA,-110.950769,32.232071,www.arizona.edu,lh4.googleusercontent.com/-ZNARJgYflmM/AAAAAAAAAAI/AAAAAAAABbU/YfkxQz2XmC4/s0-c-k-no-ns/photo.jpg
+69,69,Vanderbilt University,USA,-86.804875,36.14443,www.vanderbilt.edu,news.vanderbilt.edu/files/vu06b.jpg
+70,70,University of Utah,USA,-111.846044,40.762484,www.utah.edu,lh4.googleusercontent.com/-ZNARJgYflmM/AAAAAAAAAAI/AAAAAAAABbU/YfkxQz2XmC4/s0-c-k-no-ns/photo.jpg
+71,71,Karolinska Institute,Sweden,18.023658,59.348127,ki.se/,ki.se/sites/all/themes/ki/images/open_graph.png
+72,72,"University of Maryland, College Park",USA,-76.939704,38.988607,www.umd.edu/,upload.wikimedia.org/wikipedia/zh/thumb/5/51/University_of_Maryland_Seal.svg/200px-University_of_Maryland_Seal.svg.png
+73,73,Tohoku University,Japan,140.874053,38.253817,www.tohoku.ac.jp/,www.tohoku.ac.jp/en/common_images/tohokuuniversitylogo.gif
+74,74,University of Copenhagen,Denmark,12.57212,55.680176,www.ku.dk/english/,slippedisc.com/wp-content/uploads/2016/02/copenhagen-uni.png
+75,75,University of Texas Southwestern Medical Center,USA,-96.842311,32.819539,www.utsouthwestern.edu,lh3.googleusercontent.com/-hm2IFr3Pn9s/AAAAAAAAAAI/AAAAAAAABbQ/xdMpM9Z3CQE/s0-c-k-no-ns/photo.jpg
+76,76,Ruprecht Karl University of Heidelberg,Germany,8.670024,49.419098,www.uni-heidelberg.de/index_e.html,upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Logo_University_of_Heidelberg.svg/200px-Logo_University_of_Heidelberg.svg.png
+77,77,University of Notre Dame,USA,-86.289848,41.616717,www.nd.edu,upload.wikimedia.org/wikipedia/en/thumb/a/a1/University_of_Notre_Dame_seal.svg/1024px-University_of_Notre_Dame_seal.svg.png
+78,78,Tsinghua University,China,116.326433,39.999651,www.nthu.edu.tw/,upload.wikimedia.org/wikipedia/zh/thumb/e/ec/Tsinghua_University_Logo.svg/200px-Tsinghua_University_Logo.svg.png
+79,79,Ludwig Maximilian University of Munich,Germany,11.582529,48.150942,www.en.uni-muenchen.de/,upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sigillum_Universitatis_Ludovico-Maximilianeae.svg/185px-Sigillum_Universitatis_Ludovico-Maximilianeae.svg.png
+80,80,Georgia Institute of Technology,USA,-84.396231,33.775502,www.gatech.edu/,lh5.googleusercontent.com/-q0gRK-mwssI/AAAAAAAAAAI/AAAAAAAAF50/buVXRKDs0ws/s0-c-k-no-ns/photo.jpg
+81,81,University of Rochester,USA,-77.631622,43.12658,www.rochester.edu,upload.wikimedia.org/wikipedia/zh/thumb/7/76/University_of_Rochester_logo.svg/1276px-University_of_Rochester_logo.svg.png
+82,82,Katholieke Universiteit Leuven,Belgium,4.700413,50.877975,www.kuleuven.be/,upload.wikimedia.org/wikipedia/commons/thumb/a/a4/KUL.gif/190px-KUL.gif
+83,83,Brown University,USA,-71.404467,41.827605,www.brown.edu,lh6.googleusercontent.com/-t3RDnbgYqSk/AAAAAAAAAAI/AAAAAAAADeI/KoFWoU4ZpAw/s0-c-k-no-ns/photo.jpg
+84,84,Emory University,USA,-84.325782,33.798836,www.emory.edu,lh5.googleusercontent.com/-cMC_LNHHjsk/AAAAAAAAAAI/AAAAAAAAB9Q/1swEsvzfFyc/s0-c-k-no-ns/photo.jpg
+85,85,Erasmus University Rotterdam,Netherlands,4.525789,51.917546,www.eur.nl/english/,www.timeshighereducation.com/sites/default/files/styles/institution_logo_320x320/public/erasmus-university-_rotterdam-logo.jpg?itok=FLZu2nPi
+86,86,Tel Aviv University,Israel,34.80428,32.113323,english.tau.ac.il/,lh4.googleusercontent.com/-HDY2lP2FUy0/AAAAAAAAAAI/AAAAAAAAABg/TPlJ9hDZwgA/s0-c-k-no-ns/photo.jpg
+87,87,Utrecht University,Netherlands,5.122698,52.090192,www.uu.nl/en,upload.wikimedia.org/wikipedia/commons/3/32/Utrecht_University_Logo.JPG
+88,88,University of Sydney,Australia,151.187143,-33.888477,sydney.edu.au/,upload.wikimedia.org/wikipedia/en/thumb/6/62/University_of_Sydney.svg/1101px-University_of_Sydney.svg.png
+89,89,"University of California, Irvine",USA,-117.768639,33.667002,uci.edu/,lh6.googleusercontent.com/-uESEAsyyBIQ/AAAAAAAAAAI/AAAAAAAADZw/XaqXqFUjOkU/s0-c-k-no-ns/photo.jpg
+90,90,University of Texas MD Anderson Cancer Center,USA,-95.40079,29.705395,www.mdanderson.org/,lh3.googleusercontent.com/-T5FasWiKOUc/AAAAAAAAAAI/AAAAAAAAEGE/PzS0nQnhTJ8/s0-c-k-no-ns/photo.jpg
+91,91,Swiss Federal Institute of Technology in Lausanne,Switzerland,6.566843,46.519144,www.epfl.ch/index.en.html,lh3.googleusercontent.com/-EBHaeSqsP8g/AAAAAAAAAAI/AAAAAAAAAO4/cmsaJfxKxvo/s0-c-k-no-ns/photo.jpg
+92,92,University of Geneva,Switzerland,6.145309,46.199355,www.unige.ch/international/en/,lh5.googleusercontent.com/-WP-ESrRN4kk/AAAAAAAAAAI/AAAAAAAAApQ/cMiJAz3cOsY/s0-c-k-no-ns/photo.jpg
+93,93,University of Melbourne,Australia,144.961388,-37.79631,www.unimelb.edu.au/,lh6.googleusercontent.com/-zSz-6HwNDsY/AAAAAAAAAAI/AAAAAAAAAMU/N8yy0Tep9jU/s0-c-k-no-ns/photo.jpg
+94,94,King's College London,United Kingdom,-0.116029,51.5115,www.kcl.ac.uk/,upload.wikimedia.org/wikipedia/commons/thumb/b/bf/King's_College_London_crest.png/220px-King's_College_London_crest.png
+95,95,Tufts University,USA,-71.120641,42.406004,www.tufts.edu,lh3.googleusercontent.com/-5e8H5QqavJg/AAAAAAAAAAI/AAAAAAAAADA/lFyc1jeiVck/s0-c-k-no-ns/photo.jpg
+96,96,University of Zurich,Switzerland,8.551013,47.374322,www.uzh.ch/en.html,d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/coursera-university-assets.s3.amazonaws.com/cc/953171de0d77c6e7b0db553f2ca932/uzh_logo_e_pos_360.png?auto=format&dpr=1&w=180&h=180
+97,97,Arizona State University,USA,-111.940011,33.421921,www.asu.edu/,upload.wikimedia.org/wikipedia/zh/thumb/a/a1/Arizona_State_University_seal.svg/1024px-Arizona_State_University_seal.svg.png
+98,98,Yonsei University,South Korea,126.938626,37.56575,www.yonsei.ac.kr/en_sc/,upload.wikimedia.org/wikipedia/zh/thumb/c/c7/YonseiUniversityEmblem.png/180px-YonseiUniversityEmblem.png
+99,99,University of Oslo,Norway,10.722029,59.940034,www.uio.no/english/,upload.wikimedia.org/wikipedia/zh/a/a2/University_of_Oslo_logo.png
+100,100,Kyushu University,Japan,130.425012,33.626721,www.kyushu-u.ac.jp/en/,upload.wikimedia.org/wikipedia/zh/thumb/f/fe/Kyushu_University.svg/243px-Kyushu_University.svg.png
