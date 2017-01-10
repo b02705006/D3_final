@@ -11,8 +11,7 @@
     }
     .gradient_scale {
     	background: linear-gradient(to right,  #fcf29c 0%,#de8926 50%,#663413 100%);
-    	display: block;
-    	margin-bottom: 12px;
+    	display: table;
     	width: 1024px;
     	height: 24px;
     	opacity: 0;
@@ -22,35 +21,27 @@
 		-ms-transition: all 1s ease-in-out;
 		transition: all 1s ease-in-out;
     }
-/*
-    #tooltip {
-				position: absolute;
-				width: 200px;
-				height: auto;
-				padding: 10px;
-				background-color: white;
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				border-radius: 10px;
-				-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-				-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-				box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-				pointer-events: none;
-			}
-*/			
+    .left {float: left; color: white; padding-left: 10px; }
+  	.right {float: right; color: white; padding-right: 10px; }
+
+	.sort_label
+	{
+	    font-family: "neutra-2-display-1";
+	    text-transform: uppercase;
+	    font-weight: 800;
+	    font-size: 11px;
+	    letter-spacing: .15em;
+	}
+
 	#tooltip_top_100.hidden {
 		display: none;
 	}
-/*	
-	#tooltip p {
-		margin: 0;
-		font-family: sans-serif;
-		font-size: 16px;
-		line-height: 20px;
+	#tooltip_choro.hidden {
+		display: none;
 	}
-*/	
-	  #tooltip_top_100
-	  {
+
+	#tooltip_choro
+	{
 	    position: absolute;
 	    width: 105px;
 	    height: auto;
@@ -59,18 +50,38 @@
 	    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 	    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 	    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
-	    
-	  }
-	  #school_name
-	  {
+	}
+	#country_name
+	{
+	    font-family: "neutra-2-text-1";
+	    font-weight: bold;
+	    font-size: 14px;
+	    padding-bottom: 5px;
+	    margin-bottom: 5px;
+	}
+
+	#tooltip_top_100
+	{
+	    position: absolute;
+	    width: 105px;
+	    height: auto;
+	    padding: 5px;
+	    background-color: white;
+	    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);    
+	}
+	
+	#school_name
+	{
 	    font-family: "neutra-2-text-1";
 	    font-weight: bold;
 	    font-size: 14px;
 	    border-bottom: 1px solid black;
 	    padding-bottom: 5px;
 	    margin-bottom: 5px;
-	  }
-	  .university_tip {font-size: 10px; font-family: "neutra-2-text-1", sans-serif;  }
+	}
+	.university_tip {font-size: 10px; font-family: "neutra-2-text-1", sans-serif;  }
 
   </style>
 </head>
@@ -78,7 +89,7 @@
 <body>
 
 	<div id="tooltip_top_100" class="hidden">
-      <div id="school_name">Harvard</div>
+      <div id="school_name">National Taiwan University</div>
       <div>
       	<img src="" height="100" width="100" id="school_logo">
       </div>
@@ -88,34 +99,34 @@
         </p>
       </div>
       <div class="university_tip">
-      	<!--
-      		<p class="university_tip">School website:</p>
-      	-->
-      	<a href="http://www.google.com"  id="school_website">http://www.google.com</a>
-
-      	
+      	<a href="http://www.ntu.edu.tw"  id="school_website">http://www.ntu.edu.tw</a>
       </div>
    	</div>
 
+   	<div id="tooltip_choro" class="hidden">
+      <div id="country_name">Taiwan</div>
+      <div id="top_1000_num">
+        <p class="university_tip">Number of top 1000 universities: 
+        	<strong><span id="top_1000_num_text"></span></strong>
+        </p>
+      </div>
+    </div>
 
 
-
-<!--
-	<div id="tooltip" class="hidden">
-		<p><strong id="school_name"></strong></p>
-		<p><span id="ranking">1</span></p>
-	</div>
--->
 
   <div class="button_label">
-	  <button onclick="showTopUniversities()">Show top 100 Universties</button>
-	  <button onclick="showUniversityChoropleth()">Show number of universities for each country</button>
+	  <button id="top100" onclick="showTopUniversities()">Top 100 Universties</button>
+	  <button id="choro" onclick="showUniversityChoropleth()">Number of top 1000 universities for each country</button>
   </div>
   <div class="gradient_scale" id="grad_sc">
+  		<p class="left sort_label" style="color: black;">Less</p>
+        <p class="right sort_label">More</p>
   </div>
   
 
   <script>
+  
+    
     var width = 1024;
     var height = 768;
     
@@ -123,7 +134,7 @@
 
     var projection = d3.geoMercator()
       .scale(width / 2 / Math.PI)
-      //.scale(100)	
+      //.scale(100)
       .translate([width / 2, height / 2])
 
     var path = d3.geoPath()
@@ -134,20 +145,25 @@
     var color = d3.scaleQuantize()
                   .range(["#F2C972", "#E6A74F",
                           "#DF8935", "#A35F28"]);
-    d3.json(url, function(json) {
-      svg.selectAll("path")
+    
+    // Hard-coded, too lazy to get data from csv
+    var rScale = d3.scaleLinear()
+        .range([6, 1])
+        .domain([1,100]);
+
+	d3.json(url, function(json) {
+      svg.selectAll(".country")
 			    .data(json.features)
 				.enter()
 				.append("path")
 				.attr("d", path)
+				.attr("class", "country")
         		.attr("stroke", "white")
 		        .attr("stroke-width", "0.5px")
 		        .attr("fill", "#E6A74E");
-    })
+	});
 
-
-    function showTopUniversities(){
-    	d3.csv("world_final.csv", function(data) {
+    d3.csv("world_final.csv", function(data) {
 							
 			svg.selectAll("circle")
 			   .data(data)
@@ -169,36 +185,32 @@
 					var yPosition = parseFloat(d3.select(this).attr("cy"));
 
 					//Update the tooltip position and value
-					var tooltip = 
-						d3.select("#tooltip_top_100");
-
+					var tooltip = d3.select("#tooltip_top_100");
 					tooltip.classed("hidden", false);
-
 					tooltip.transition()
-			            .duration(500)    
-			            .style("opacity", 0);
-
+				           .duration(500)    
+			               .style("opacity", 0);
 			        tooltip.transition()    
-			            .style("opacity", .9)
-			            .style("left", xPosition + "px")
-					    .style("top", yPosition + "px");    
+			               .style("opacity", .9)
+			               .style("left", xPosition + "px")
+					       .style("top", yPosition + "px");    
 					  
 					tooltip.select("#school_name")
-					  .text(d.institution);
+					       .text(d.institution);
 
 					tooltip.select("#ranking_text")
-					  .text(d.world_rank);
+					       .text(d.world_rank);
 
 					tooltip.select("#school_website")
-					  .text(d.web_addr);
+					       .text(d.web_addr);
 
 					tooltip.select("#school_website")
-					  .attr('href', "http://" + d.web_addr)
+					       .attr('href', "http://" + d.web_addr)
 					tooltip.select("#school_website")
-					  .attr('target', "blank")
+					       .attr('target', "blank")
 
 					tooltip.select("#school_logo")
-					  .attr('src', "http://" + d.logo_source)
+					       .attr('src', "http://" + d.logo_source)
 
 
 			   })
@@ -209,26 +221,58 @@
 			   })
 			   .transition()
 			   .duration(750)
-			   .attr("r", 3.5)
+			   .attr("r",0)
 			   .style("fill", "#9E7033")
 			   .attr("stroke", "white")
 			   .attr("stroke-width", "0.6")
 			   .style("opacity", 0.75)
-
-			   /*
-			   .on("mouseover", function(d) {
-			     d3.select(this).style("fill", "#4C2C00");
-			   })
-			   .on("mouseout", function(d) {
-			   	 d3.select(this).style("fill", "#9E7033");
-			   });
-			   */
 		});
 
+
+    function showTopUniversities(){
+    	//Remove mouseover and mouseout effect
+    	cancel_hover()
+		//Hide previous tooltip
+		d3.select("#tooltip_choro")
+		  .classed("hidden", true);
+
+    	svg.selectAll(".country")
+    	   .transition()
+		   .duration(750)
+    	   .attr("fill","#E6A74E")
+    	   .style("opacity",1);
+
+    	d3.csv("world_final.csv", function(data) {
+		svg.selectAll("circle")
+		   .transition()
+		   .duration(750)
+		   .attr("r",function(d) {
+			   	 return rScale(d.world_rank);
+			});				
+		});
+
+    	// Hide gradient scale
+		document.getElementById("grad_sc").style.opacity = 0;
     }
 
+    function cancel_hover(){
+    	d3.selectAll(".country")
+          .on("mouseover", null)
+          .on("mouseout", null);
+    }
 
     function showUniversityChoropleth(){
+    	cancel_hover();
+		// Hide the top 100 universities (circles)
+		svg.selectAll("circle")
+		   .transition()
+		   .duration(750)
+		   .attr("r",0);
+
+		// Hide tooltip
+		d3.select("#tooltip_top_100")
+		  .classed("hidden", true);
+
 		d3.csv("top_1000_summary.csv", function(data) {
 		    	//console.log(data);
 		    	data.forEach(function(d) {
@@ -254,8 +298,41 @@
 		      			}
 		      		}
 		      		//console.log("hey");
-		      		svg.selectAll("path")
+		      		svg.selectAll(".country")
 		      				.data(json.features)
+		      				.on("mouseover", function(d){
+				               
+				                // Add tool tip for choropleth
+								var tooltip = d3.select("#tooltip_choro");
+								tooltip.classed("hidden", false);
+								tooltip.transition()
+							            .duration(500)    
+							            .style("opacity", 0);
+						        tooltip.transition()    
+							            .style("opacity", .9)
+							            .style("left", (d3.event.pageX) + 20 + "px")
+                 						.style("top", (d3.event.pageY) - 30 + "px");   
+								tooltip.select("#country_name")
+									  .text(d.properties.name);
+								tooltip.select("#top_1000_num_text")
+									  .text(d.properties.n_topUniversities);
+
+								// Fade out other countries when hovered upon
+			   	               	d3.selectAll(".country")
+				                  .transition()
+				                  .duration(100)
+				                  .style("opacity", .5);
+				                d3.select(this)
+				                  .transition()
+				                  .duration(250)
+				                  .style("opacity", 1);
+							})
+							.on("mouseout", function(d){
+				              	d3.selectAll(".country")
+				                  .transition()
+				                  .duration(100)
+				                  .style("opacity", 1);
+				            })
 							.transition()
 				            .duration(750)
 				            .attr("fill", function(d) {
@@ -273,13 +350,10 @@
 		      	});
 			});
 		document.getElementById("grad_sc").style.opacity = 0.9;
-		console.log("dafuq");
+		
+		//console.log("dafuq");
     }
 
 
-
-
-
-    
   </script>
 </body>
